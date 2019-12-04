@@ -19,12 +19,13 @@
         </div>
 
         <slot name="heading"></slot>
+
         <slot :filteredList="filteredList"></slot>
     </div>
 </template>
 
 <script lang="ts">
-    import Vue, {PropType}from 'vue';
+    import Vue, {PropType} from 'vue';
     import {FilterItems, Todo} from "@/types.ts"
 
     export default Vue.extend({

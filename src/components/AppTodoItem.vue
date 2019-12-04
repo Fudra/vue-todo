@@ -13,21 +13,26 @@
                 {{currentTodo.message}}
             </div>
             <template v-if="isEditing">
-                  <input type="text" class="form-input border-0 ml-2 w-full"
-                         :ref="itemName"
-                         @keydown.enter="saveChanges"
-                         @keydown.esc="cancelChanges"
-                         @blur="cancelChanges"
-                         v-model="editedTodo">
+                <label for="edit-todo-item">
+                    <input type="text" class="form-input border-0 ml-2 w-full"
+                           :ref="itemName"
+                           id="edit-todo-item"
+                           @keydown.enter="saveChanges"
+                           @keydown.esc="cancelChanges"
+                           @blur="cancelChanges"
+                           v-model="editedTodo">
+                </label>
             </template>
         </div>
 
         <div>
             <a href="#"
-               class="inline-block ml-6  w-8 h-8 text-sm text-gray-600 hover:text-red-600 flex justify-center items-center"
+               class="inline-block ml-6 w-8 h-8 text-sm text-gray-600 hover:text-red-600 flex justify-center items-center"
                @click.prevent="deleteItem"
             >
-                <svg  width="24" height="24" class="fill-current"><path  d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 012 2v2h5a1 1 0 010 2h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 110-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zm4 0a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1z"/></svg>
+                <svg  width="24" height="24" class="fill-current">
+                    <path  d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 012 2v2h5a1 1 0 010 2h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 110-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zm4 0a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1z"/>
+                </svg>
             </a>
         </div>
     </div>
