@@ -25,11 +25,6 @@
                 </slot>
             </template>
         </app-todo-filter>
-
-        <div>
-
-        </div>
-
     </div>
 </template>
 
@@ -55,18 +50,16 @@
             props: {
                 todos: {
                     type: Array as PropType<Todo[]>,
-                    required: true,
+                    required: false,
+                    default: () => ([]),
                 }
             },
             methods: {
                 updateTodo(value: Todo): void {
-                    // let idx = this.todos.findIndex((i) => i.id === value.id);
-                    // this.$set(this.todos, idx, value)
                     this.$emit('update', value)
                 },
                 deleteTodo(value: Todo): void {
                     this.$emit('delete', value)
-                    // this.todos = this.todos.filter((i) => i.id !== value.id);
                 },
             }
         }
